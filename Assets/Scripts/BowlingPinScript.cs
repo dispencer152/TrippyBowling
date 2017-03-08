@@ -10,17 +10,24 @@ public class BowlingPinScript : MonoBehaviour {
 	[SerializeField]
 	ParticleSystem explosion;
 
+    bool triggered = false;
 
+    GameObject scoreboard;
 
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start () {
+        scoreboard = GameObject.Find("Scoreboard");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        if (Vector3.Angle(Vector3.up, transform.up) > 45f && !triggered)
+        {
+            scoreboard.GetComponent<Scorekeeper>().PinHit();
+            triggered = true;
+        }
+    }
 
 	void OnCollisionEnter(Collision col){
 
