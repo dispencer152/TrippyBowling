@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: c70db7d32cc7e422cbbb54b740754f62
+timeCreated: 1489013213
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group
+    100004: group1
+    100006: group2
+    100008: group3
+    100010: group4
+    100012: group5
+    100014: group6
+    100016: group7
+    100018: pasted__pCylinder1
+    100020: pasted__pCylinder1 1
+    100022: pasted__pCylinder2
+    100024: pasted__pCylinder2 1
+    100026: pasted__pCylinder3
+    100028: pasted__pCylinder3 1
+    100030: pCylinder1
+    100032: pCylinder2
+    100034: pCylinder3
+    100036: pSphere1
+    100038: pSphere10
+    100040: pSphere2
+    100042: pSphere4
+    100044: pSphere5
+    100046: pSphere6
+    100048: pSphere7
+    100050: pSphere8
+    100052: pSphere9
+    100054: transform1
+    100056: transform10
+    100058: transform11
+    100060: transform12
+    100062: transform13
+    100064: transform14
+    100066: transform15
+    100068: transform16
+    100070: transform17
+    100072: transform2
+    100074: transform3
+    100076: transform4
+    100078: transform5
+    100080: transform6
+    100082: transform7
+    100084: transform8
+    100086: transform9
+    400000: //RootNode
+    400002: group
+    400004: group1
+    400006: group2
+    400008: group3
+    400010: group4
+    400012: group5
+    400014: group6
+    400016: group7
+    400018: pasted__pCylinder1
+    400020: pasted__pCylinder1 1
+    400022: pasted__pCylinder2
+    400024: pasted__pCylinder2 1
+    400026: pasted__pCylinder3
+    400028: pasted__pCylinder3 1
+    400030: pCylinder1
+    400032: pCylinder2
+    400034: pCylinder3
+    400036: pSphere1
+    400038: pSphere10
+    400040: pSphere2
+    400042: pSphere4
+    400044: pSphere5
+    400046: pSphere6
+    400048: pSphere7
+    400050: pSphere8
+    400052: pSphere9
+    400054: transform1
+    400056: transform10
+    400058: transform11
+    400060: transform12
+    400062: transform13
+    400064: transform14
+    400066: transform15
+    400068: transform16
+    400070: transform17
+    400072: transform2
+    400074: transform3
+    400076: transform4
+    400078: transform5
+    400080: transform6
+    400082: transform7
+    400084: transform8
+    400086: transform9
+    2300000: pSphere10
+    3300000: pSphere10
+    4300000: pSphere10
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
