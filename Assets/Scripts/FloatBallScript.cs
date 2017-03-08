@@ -4,36 +4,27 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class RackButtonScript : MonoBehaviour {
-	[SerializeField]
-	Transform pinprefab;
+public class FloatBallScript : MonoBehaviour {
 
 	[SerializeField]
-	Transform pins;
+	ButtonScript ballScript;
 
 	[SerializeField]
-	Transform spawnpoint;
-
-
+	RackButtonScript pinScript;
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
-
+		
 	}
-
 	void HandHoverUpdate(Hand hand){
 		if (hand.GetStandardInteractionButtonDown () == true){
-			if (pins != null) {
-				Destroy (pins.gameObject);
-			}
-			pins = Instantiate (pinprefab, spawnpoint.transform.position, Quaternion.identity);
-
+			ballScript.FloatBall ();
+			pinScript.NormalPins ();
 		}
 	}
-
 }
