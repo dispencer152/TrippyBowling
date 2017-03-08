@@ -14,17 +14,18 @@ public class ButtonScript : MonoBehaviour {
 	[SerializeField]
 	Transform spawnpoint;
 
+    GameObject scoreboard;
 
+    bool firstBall = true;
 
 	// Use this for initialization
 	void Start () {
-		
+        scoreboard = GameObject.Find("Scoreboard");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (ball != null)
-		Debug.Log (ball.GetComponent<SphereCollider> ().material.staticFriction);
+
 	}
 
 	void HandHoverUpdate(Hand hand){
@@ -32,9 +33,10 @@ public class ButtonScript : MonoBehaviour {
 			if (ball != null) {
 				Destroy (ball.gameObject);
 			}
-			ball = Instantiate (ballprefab, spawnpoint.transform.position, Quaternion.identity);
-
-
+            ball = Instantiate(ballprefab, spawnpoint.transform.position, Quaternion.identity);
+            if (!firstBall)
+                scoreboard.GetComponent<Scorekeeper>().NextFrame();
+            firstBall = false;
 		}
 	}
 
