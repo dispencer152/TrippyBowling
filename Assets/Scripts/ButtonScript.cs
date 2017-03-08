@@ -12,19 +12,26 @@ public class ButtonScript : MonoBehaviour {
 	Transform ball;
 
 	[SerializeField]
+	Transform pinprefab;
+
+	[SerializeField]
+	Transform floatballPrefab;
+
+	[SerializeField]
 	Transform spawnpoint;
+
+	private Transform activeThrowable;
 
 
 
 	// Use this for initialization
 	void Start () {
-		
+		activeThrowable = ballprefab;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (ball != null)
-		Debug.Log (ball.GetComponent<SphereCollider> ().material.staticFriction);
+		
 	}
 
 	void HandHoverUpdate(Hand hand){
@@ -32,10 +39,18 @@ public class ButtonScript : MonoBehaviour {
 			if (ball != null) {
 				Destroy (ball.gameObject);
 			}
-			ball = Instantiate (ballprefab, spawnpoint.transform.position, Quaternion.identity);
+			ball = Instantiate (activeThrowable, spawnpoint.transform.position, Quaternion.identity);
 
 
 		}
 	}
-
+	public void BallToPin(){
+		activeThrowable = pinprefab; 
+	}
+	public void FloatBall(){
+		activeThrowable = floatballPrefab;
+	}
+	public void NormalBall(){
+		activeThrowable = ballprefab;
+	}
 }
