@@ -42,7 +42,7 @@ public class tileGenerator : MonoBehaviour {
 		Color worldColor = new Color (Random.Range (0.7f,1f), Random.Range (.7f,1f), Random.Range (0.7f,1f), 1f);
 		Camera.main.backgroundColor = worldColor;
 		RenderSettings.fog = true; 
-		RenderSettings.fogDensity = .0055f;
+		RenderSettings.fogDensity = .0025f;
 		RenderSettings.fogColor = worldColor;
 	}
 
