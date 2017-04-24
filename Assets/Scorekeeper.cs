@@ -8,6 +8,7 @@ public class Scorekeeper : MonoBehaviour {
     int currentScoreBox = 0;
 	public GameObject pinCheck;
 	private Vector3 pinCheckRay;
+	private Vector3 temp;
 	public GameObject roof;
 	public GameObject northWall;
 	public GameObject southWall;
@@ -21,18 +22,20 @@ public class Scorekeeper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pinCheckRay = new Vector3 (3.0f, 3.0f, 3.0f);
+		temp = new Vector3 (0f, 1f, 0f);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Collider[] pins = Physics.OverlapBox (pinCheck.transform.position, pinCheckRay);
-		if (pins.Length == 0) {
-			//roof.transform.position.y += 1 * Time.deltaTime;
-			//northWall.transform.position.x -= 1 * Time.deltaTime;
-			//southWall.transform.position.x += 1 * Time.deltaTime;
-			//eastWall.transform.position.z += 1 * Time.deltaTime;
-			//westWall.transform.position.z -= 1 * Time.deltaTime;
-
+		Collider[] pins = Physics.OverlapSphere (pinCheck.transform.position,1000f);
+		if (Time.timeSinceLevelLoad > 0) {
+			temp.y += 1 * Time.deltaTime;
+			roof.transform.position = temp;
+			northWall.transform.position = temp;
+			southWall.transform.position = temp;
+			eastWall.transform.position = temp;f
+			westWall.transform.position = temp;
 		}
 	}
 
