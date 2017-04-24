@@ -7,8 +7,8 @@ public class BowlingPinScript : MonoBehaviour {
 	[SerializeField]
 	Transform ball;
 
-	[SerializeField]
-	ParticleSystem explosion;
+	//[SerializeField]
+	//ParticleSystem explosion;
 
     bool triggered = false;
 
@@ -29,7 +29,7 @@ public class BowlingPinScript : MonoBehaviour {
         }
     }
 
-	void OnCollisionEnter(Collision col){
+	/*void OnCollisionEnter(Collision col){
 
 		if (col.collider.tag == "ball") {
 			ParticleSystem a = (ParticleSystem)Instantiate (explosion, transform.position, Quaternion.identity);
@@ -41,6 +41,6 @@ public class BowlingPinScript : MonoBehaviour {
 				}
 			}
 		}
-	}
+	}*/
 
 }
