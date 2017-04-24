@@ -29,14 +29,13 @@ public class Scorekeeper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Collider[] pins = Physics.OverlapSphere (pinCheck.transform.position,1000f);
-		if () {
+		if (Time.timeSinceLevelLoad > 0) {
 			temp.y += 1 * Time.deltaTime;
 			roof.transform.position = temp;
 			northWall.transform.position = temp;
 			southWall.transform.position = temp;
-			eastWall.transform.position = temp;
+			eastWall.transform.position = temp;f
 			westWall.transform.position = temp;
-
 		}
 	}
 
