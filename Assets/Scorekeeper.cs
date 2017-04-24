@@ -16,7 +16,10 @@ public class Scorekeeper : MonoBehaviour {
     int pinsDown = 0;
 
     public Text[] scoreBoxes = new Text[20];
+    int[] scoreBoxesInt = new int[20];
 
+    public Text[] scores = new Text[10];
+    int[] scoresInt = new int[10];
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,7 @@ public class Scorekeeper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
 		Collider[] pins = Physics.OverlapBox (pinCheck.transform.position, pinCheckRay);
 		if (pins.Length == 0) {
 			//roof.transform.position.y += 1 * Time.deltaTime;
@@ -34,14 +38,39 @@ public class Scorekeeper : MonoBehaviour {
 			//westWall.transform.position.z -= 1 * Time.deltaTime;
 
 		}
+=======
+>>>>>>> 879b2558f6f9cce225676fc3ddfd448363fce12a
 	}
 
 
     public void NextFrame()
     {
-        if (currentScoreBox != 19)
+        //make sure we don't go out of array bounds
+        if (currentScoreBox < 20)
         {
-            scoreBoxes[currentScoreBox].text = pinsDown.ToString();
+            //if strike or spare
+            if (pinsDown == 10)
+            {
+                //if strike
+                if (currentScoreBox % 2 == 0)
+                {
+                    scoreBoxes[currentScoreBox].text = "X";
+                    currentScoreBox++;
+                }
+                //if spare
+                else
+                {
+                    scoreBoxes[currentScoreBox].text = "/";
+                }
+            }
+            //if not strike or spare
+            else
+            {
+                scoreBoxes[currentScoreBox].text = pinsDown.ToString();
+
+                scores[(currentScoreBox - 1) / 2].text = pinsDown.ToString();
+
+            }
             currentScoreBox++;
             pinsDown = 0;
         }
