@@ -24,7 +24,7 @@ public class treeGenerator : MonoBehaviour {
 			if ((newPin.transform.position.x > -16f) && (newPin.transform.position.x < 9f)){
 				Destroy (newPin);
 			}
-			if ((newPin.transform.position.z >-6f ) && (newPin.transform.position.z < 6f)){
+			if ((newPin.transform.position.z >-28f ) && (newPin.transform.position.z < 12f)){
 				Destroy (newPin);
 			}
 		}
