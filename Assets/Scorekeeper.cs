@@ -34,7 +34,7 @@ public class Scorekeeper : MonoBehaviour {
 			roof.transform.position = temp;
 			northWall.transform.position = temp;
 			southWall.transform.position = temp;
-			eastWall.transform.position = temp;f
+			eastWall.transform.position = temp;
 			westWall.transform.position = temp;
 		}
 	}
