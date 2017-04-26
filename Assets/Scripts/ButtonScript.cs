@@ -22,14 +22,12 @@ public class ButtonScript : MonoBehaviour {
 
 	private Transform activeThrowable;
 
-    GameObject scorekeeper;
 
     bool firstBall = true;
 
 	// Use this for initialization
 	void Start () {
 		activeThrowable = ballprefab;
-        scorekeeper = GameObject.Find("Scoreboard");
 	}
 	
 	// Update is called once per frame
@@ -43,8 +41,6 @@ public class ButtonScript : MonoBehaviour {
 				Destroy (ball.gameObject);
 			}
 			ball = Instantiate (activeThrowable, spawnpoint.transform.position, Quaternion.identity);
-            if (!firstBall)
-                scorekeeper.GetComponent<Scorekeeper>().NextFrame();
             firstBall = false;
 
 		}
