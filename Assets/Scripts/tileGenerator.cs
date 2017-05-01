@@ -6,6 +6,7 @@ public class tileGenerator : MonoBehaviour {
 	
 	public GameObject grasstilePrefab;
 
+    public GameObject camera;
 
 	List<GameObject> row1List = new List<GameObject>();
 	List <GameObject> row2List = new List<GameObject> ();
