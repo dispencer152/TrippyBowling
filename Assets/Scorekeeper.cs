@@ -9,11 +9,7 @@ public class Scorekeeper : MonoBehaviour {
 	public GameObject pinCheck;
 	private Vector3 pinCheckRay;
 	private Vector3 temp;
-	public GameObject roof;
-	public GameObject northWall;
-	public GameObject southWall;
-	public GameObject westWall;
-	public GameObject eastWall;
+	public GameObject walls;
     int pinsDown = 0;
 
     public Text[] scoreBoxes = new Text[20];
@@ -29,13 +25,9 @@ public class Scorekeeper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Collider[] pins = Physics.OverlapSphere (pinCheck.transform.position,1000f);
-		if (Time.timeSinceLevelLoad > 0) {
-			temp.y += 1 * Time.deltaTime;
-			roof.transform.position = temp;
-			northWall.transform.position = temp;
-			southWall.transform.position = temp;
-			eastWall.transform.position = temp;
-			westWall.transform.position = temp;
+		if(walls.transform.position.y < 100f) {
+			temp.y += Time.deltaTime;
+			walls.transform.position = temp;
 		}
 	}
 
