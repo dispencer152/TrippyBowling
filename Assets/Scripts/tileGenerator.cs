@@ -6,7 +6,7 @@ public class tileGenerator : MonoBehaviour {
 	
 	public GameObject grasstilePrefab;
 
-	public Camera camera;
+    public Camera camera;
 
 	List<GameObject> row1List = new List<GameObject>();
 	List <GameObject> row2List = new List<GameObject> ();
@@ -50,7 +50,7 @@ public class tileGenerator : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
-		
+
 		//row1
 		while (row1List.Count < 10) {
 			GameObject newTile = (GameObject)Instantiate (grasstilePrefab, row1Vector, Quaternion.Euler (0f, 0f, 0f));
