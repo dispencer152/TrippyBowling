@@ -6,7 +6,7 @@ public class tileGenerator : MonoBehaviour {
 	
 	public GameObject grasstilePrefab;
 
-    public GameObject camera;
+	public Camera camera;
 
 	List<GameObject> row1List = new List<GameObject>();
 	List <GameObject> row2List = new List<GameObject> ();
@@ -41,7 +41,7 @@ public class tileGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Color worldColor = new Color (Random.Range (0.7f,1f), Random.Range (.7f,1f), Random.Range (0.7f,1f), 1f);
-		Camera.main.backgroundColor = worldColor;
+		camera.backgroundColor = worldColor;
 		RenderSettings.fog = true; 
 		RenderSettings.fogDensity = .0025f;
 		RenderSettings.fogColor = worldColor;
@@ -50,7 +50,7 @@ public class tileGenerator : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
-
+		
 		//row1
 		while (row1List.Count < 10) {
 			GameObject newTile = (GameObject)Instantiate (grasstilePrefab, row1Vector, Quaternion.Euler (0f, 0f, 0f));

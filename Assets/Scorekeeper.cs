@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Scorekeeper : MonoBehaviour {
 
     int currentScoreBox = 0;
-	public GameObject pinCheck;
 	private Vector3 pinCheckRay;
 	private Vector3 temp;
 	public GameObject walls;
@@ -18,15 +17,14 @@ public class Scorekeeper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pinCheckRay = new Vector3 (3.0f, 3.0f, 3.0f);
-		temp = new Vector3 (0f, 1f, 0f);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Collider[] pins = Physics.OverlapSphere (pinCheck.transform.position,1000f);
 		if(walls.transform.position.y < 100f) {
-			temp.y += Time.deltaTime;
+			temp = walls.transform.position;
+			temp.y += Time.deltaTime*5.0f;
 			walls.transform.position = temp;
 		}
 	}
