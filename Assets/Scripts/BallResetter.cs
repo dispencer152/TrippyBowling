@@ -10,18 +10,20 @@ public class BallResetter : MonoBehaviour {
     public Transform activeBall;
     bool firstBall = true;
     public int ballsHit = 0;
+	public Transform gameManager;
 
 	// Use this for initialization
 	void Start () {
         ballSpawn = GameObject.Find("BallSpawn");
         activeBall = GameObject.Find("NewBall(Clone)").transform;
+		gameManager = GameObject.Find("GameManager").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
         if (startTimer)
         {
+			
             timer -= Time.deltaTime;
         }
 
@@ -29,8 +31,9 @@ public class BallResetter : MonoBehaviour {
         {
             Destroy(activeBall.gameObject);
             activeBall = Instantiate(ballPrefab, ballSpawn.transform.position, Quaternion.identity);
+			gameManager.gameObject.GetComponent<Scorekeeper> ().framesCompleted++;
             startTimer = false;
-            timer = 5f;
+            timer = 4f;
 
             if (firstBall && ballsHit != 10)
             {
@@ -51,13 +54,13 @@ public class BallResetter : MonoBehaviour {
 
     public void BallResetTimer()
     {
-        timer = 5f;
+        timer = 3f;
         startTimer = true;
         ballsHit++;
     }
     public void GutterReset()
     {
-        timer = 5f;
+        timer = 4f;
         startTimer = true;
     }
 

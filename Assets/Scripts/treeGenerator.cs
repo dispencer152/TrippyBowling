@@ -5,6 +5,7 @@ using System.Collections;
 public class treeGenerator : MonoBehaviour {
 
 	public GameObject pinPrefab;
+	GameObject treeParent;
 
 	//public GameObject treePrefabColor;
 
@@ -13,6 +14,7 @@ public class treeGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		treeParent = GameObject.Find ("TreeParent");
 		while (listofPins.Count < 200) {
 			GameObject newPin = (GameObject)Instantiate(pinPrefab, new Vector3 (Random.Range (-360f,90f), Random.Range (-5f,6f), Random.Range (-400f,100f)), Quaternion.Euler (0f,(Random.Range(0,360)),0f));
 			newPin.GetComponent<MeshRenderer>().material.color = new Color (Random.value, Random.value, Random.value, 1f);
@@ -27,6 +29,7 @@ public class treeGenerator : MonoBehaviour {
 			if ((newPin.transform.position.z >-28f ) && (newPin.transform.position.z < 12f)){
 				Destroy (newPin);
 			}
+			newPin.transform.SetParent (treeParent.transform);
 		}
 
 	}
