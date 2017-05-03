@@ -5,7 +5,7 @@ using UnityEngine;
 public class tileGenerator : MonoBehaviour {
 	
 	public GameObject grasstilePrefab;
-
+	GameObject ground;
     public Camera camera;
 
 	List<GameObject> row1List = new List<GameObject>();
@@ -40,6 +40,7 @@ public class tileGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		ground = GameObject.Find ("GroundParent");
 		Color worldColor = new Color (Random.Range (0.7f,1f), Random.Range (.7f,1f), Random.Range (0.7f,1f), 1f);
 		camera.backgroundColor = worldColor;
 		RenderSettings.fog = true; 
@@ -56,8 +57,8 @@ public class tileGenerator : MonoBehaviour {
 			GameObject newTile = (GameObject)Instantiate (grasstilePrefab, row1Vector, Quaternion.Euler (0f, 0f, 0f));
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row1Vector.x = row1Vector.x - xLength;
-
 			row1List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 
 		}
 		//row2
@@ -66,6 +67,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row2Vector.x = row2Vector.x - xLength;
 			row2List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 
 		}
 		//row3
@@ -75,6 +77,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row3Vector.x = row3Vector.x - xLength;
 			row3List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 
 		//row4
@@ -83,6 +86,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row4Vector.x = row4Vector.x - xLength;
 			row4List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 
 		//row5
@@ -91,6 +95,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row5Vector.x = row5Vector.x - xLength;
 			row5List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 		//row6
 		while (row6List.Count < 10) {
@@ -98,6 +103,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row6Vector.x = row6Vector.x - xLength;
 			row6List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 		//row7
 		while (row7List.Count < 10) {
@@ -105,6 +111,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row7Vector.x = row7Vector.x - xLength;
 			row7List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 		//row8
 		while (row8List.Count < 10) {
@@ -112,6 +119,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row8Vector.x = row8Vector.x - xLength;
 			row8List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 		//row9
 		while (row9List.Count < 10) {
@@ -119,6 +127,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row9Vector.x = row9Vector.x - xLength;
 			row9List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 		//row10
 		while (row10List.Count < 10) {
@@ -126,6 +135,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row10Vector.x = row10Vector.x - xLength;
 			row10List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 		//row11
 		while (row11List.Count < 10) {
@@ -133,6 +143,7 @@ public class tileGenerator : MonoBehaviour {
 			newTile.GetComponent<Renderer> ().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			row11Vector.x = row11Vector.x - xLength;
 			row11List.Add (newTile);
+			newTile.transform.SetParent (ground.transform);
 		}
 	}
 
