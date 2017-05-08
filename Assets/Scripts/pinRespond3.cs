@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pinRespond3 : MonoBehaviour {
 
-	public GameObject pin10;
+	//public GameObject pin10;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +13,10 @@ public class pinRespond3 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.eulerAngles = pin10.transform.eulerAngles;	
+		GameObject pin10;
+		if (GameObject.Find ("body3")) {
+			pin10 = GameObject.Find ("body3");
+			gameObject.transform.eulerAngles = pin10.transform.eulerAngles;	
+		}
 	}
 }
