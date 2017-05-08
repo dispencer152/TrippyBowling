@@ -7,7 +7,7 @@ public class treeGenerator : MonoBehaviour {
 	public GameObject bigpin1;
 	public GameObject bigpin2;
 	public GameObject bigpin3; 
-
+	GameObject treeParent;
 	//public GameObject treePrefabColor;
 
 	List<GameObject> listofPins1 = new List<GameObject>();
@@ -17,7 +17,9 @@ public class treeGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		while (listofPins1.Count < 60) {
+			treeParent = GameObject.Find ("TreeParent");
 			GameObject newPin = (GameObject)Instantiate(bigpin1, new Vector3 (Random.Range (-360f,90f), Random.Range (-5f,6f), Random.Range (-400f,100f)), Quaternion.Euler (0f,(Random.Range(0,360)),0f));
+			newPin.transform.SetParent (treeParent.transform);
 			newPin.GetComponent<MeshRenderer>().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			newPin.GetComponent<MeshRenderer> ().material.EnableKeyword ("_EMISSION");
 			newPin.GetComponent<MeshRenderer> ().material.SetColor ("_Emission", Color.blue);
@@ -34,6 +36,7 @@ public class treeGenerator : MonoBehaviour {
 
 		while (listofPins2.Count < 60) {
 			GameObject newPin = (GameObject)Instantiate(bigpin2, new Vector3 (Random.Range (-360f,90f), Random.Range (-5f,6f), Random.Range (-400f,100f)), Quaternion.Euler (0f,(Random.Range(0,360)),0f));
+			newPin.transform.SetParent (treeParent.transform);
 			newPin.GetComponent<MeshRenderer>().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			newPin.GetComponent<MeshRenderer> ().material.EnableKeyword ("_EMISSION");
 			newPin.GetComponent<MeshRenderer> ().material.SetColor ("_Emission", Color.blue);
@@ -49,6 +52,7 @@ public class treeGenerator : MonoBehaviour {
 		}
 		while (listofPins3.Count < 60) {
 			GameObject newPin = (GameObject)Instantiate(bigpin3, new Vector3 (Random.Range (-360f,90f), Random.Range (-5f,6f), Random.Range (-400f,100f)), Quaternion.Euler (0f,(Random.Range(0,360)),0f));
+			newPin.transform.SetParent (treeParent.transform);
 			newPin.GetComponent<MeshRenderer>().material.color = new Color (Random.value, Random.value, Random.value, 1f);
 			newPin.GetComponent<MeshRenderer> ().material.EnableKeyword ("_EMISSION");
 			newPin.GetComponent<MeshRenderer> ().material.SetColor ("_Emission", Color.blue);
