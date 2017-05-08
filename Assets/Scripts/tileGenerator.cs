@@ -8,6 +8,7 @@ public class tileGenerator : MonoBehaviour {
 	GameObject ground;
     public Camera camera;
 
+
 	List<GameObject> row1List = new List<GameObject>();
 	List <GameObject> row2List = new List<GameObject> ();
 	List<GameObject> row3List = new List<GameObject> ();
