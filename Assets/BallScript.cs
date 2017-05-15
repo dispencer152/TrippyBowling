@@ -10,17 +10,28 @@ public class BallScript : MonoBehaviour {
     Transform pins;
     public Transform pinSpawn;
     public Transform pinsPrefab;
+	AudioSource sm;
+	public AudioClip hitfloor;
+	public AudioClip rolling;
+	public AudioClip pinsound;
+	bool hitground;
 
 
 	// Use this for initialization
 	void Start () {
+		hitground = false;
         pinSpawn = GameObject.Find("PinSpawn").transform;
         player = GameObject.Find("Player").transform;
+		sm = GetComponent<AudioSource> ();
 	}
-	
+
+	void FixedUpdate(){
+		GetComponent<Rigidbody> ().AddForce (Physics.gravity * GetComponent<Rigidbody> ().mass);
+
+	}
+
 	// Update is called once per frame
 	void Update () {
-
         if (startTimer)
         {
             timer -= Time.deltaTime;
@@ -48,4 +59,27 @@ public class BallScript : MonoBehaviour {
             timer = 10f;
         }
     }
+	void OnCollisionEnter(Collision other){
+		if (other.gameObject.tag == "Floor") {
+			sm.PlayOneShot (hitfloor);
+			Debug.Log ("hit");
+		}
+		if (other.gameObject.tag == "pin") {
+			sm.PlayOneShot (pinsound);
+		}
+	}
+	void OnCollisionStay(Collision other){
+		if (other.gameObject.tag == "Floor") {
+			if (!sm.isPlaying) {
+				sm.PlayOneShot (rolling);
+				Debug.Log ("it's playing yo");
+			}
+		}
+	}
+	void OnCollisionExit(Collision other){
+		if (other.gameObject.tag == "Floor") {
+			sm.Stop ();
+		}
+	}
+
 }

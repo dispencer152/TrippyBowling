@@ -13,6 +13,11 @@ public class pinRespond3 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.eulerAngles = pin10.transform.eulerAngles;	
+		
+		if (GameObject.Find ("body3")) {
+			pin10 = GameObject.Find ("body3");
+			gameObject.transform.eulerAngles = pin10.transform.eulerAngles; 
+		}
+
 	}
 }
