@@ -19,9 +19,6 @@ public class Scorekeeper : MonoBehaviour {
 	bool startRolling;
 
 
-    public Text[] scoreBoxes = new Text[20];
-
-
 	// Use this for initialization
 	void Start () {
 		pinCheckRay = new Vector3 (3.0f, 3.0f, 3.0f);
@@ -54,18 +51,6 @@ public class Scorekeeper : MonoBehaviour {
 			GameObject planet = Instantiate (ball, spawnLoc, Quaternion.identity);
 			startRolling = false;
 		}
-	}
-    public void NextFrame()
-    {
-        if (currentScoreBox != 19)
-        {
-            scoreBoxes[currentScoreBox].text = pinsDown.ToString();
-            currentScoreBox++;
-            pinsDown = 0;
-        }
-    }
-	public void PinHit(){
-
 	}
 
 
